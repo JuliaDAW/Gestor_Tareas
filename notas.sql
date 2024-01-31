@@ -7,4 +7,5 @@ create table nota(
     nombre varchar(255) unique,
     descripción varchar(255),
     primary key(id)
-)
+);
+INSERT INTO nota VALUES (null, "Primera Nota", "Ejemplo de Descripción"), (null, "Segunda Nota", "Ejemplo de Descripción")
