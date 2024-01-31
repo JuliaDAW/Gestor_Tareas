@@ -6,4 +6,10 @@
     //$array=array(":id"=>$_POST["id"]);
     $sql=$conectar->prepare("DELETE FROM nota WHERE id=1");
     $sql->execute();
+    $rows=$sql->rowCount();
+    if($rows>0){
+        echo json_encode(array("status"=>"ok"));
+    }else{
+        echo json_encode(array("status"=>"error"));
+    }
 ?>
