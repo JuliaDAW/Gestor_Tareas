@@ -20,4 +20,8 @@ $(document).ready(()=>{
             window.alert("Se ha producido un error");
         }
     });
+
+    $("#id_insertar").on("click", function(){
+        
+    });
 });
