@@ -1,0 +1,20 @@
+:root {
+    --morado-oscuro: #330C2F;
+    --morado: #7b287d;
+    --azul-oscuro: #7067cf;
+    --azul: #b7c0ee;
+    --verde: #cbf3d2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    
+}
