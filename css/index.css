@@ -16,5 +16,37 @@ button {
     cursor: pointer;
     border: none;
     outline: none;
-    
+    font-weight: bold;
+    border-radius: 0.5rem;
+
+}
+
+h1 {
+    font-family: 'Sixtyfour', sans-serif;
+    font-size: 3rem;
+    line-height: 1rem;
+    color: var(--morado-oscuro);
+    margin: 1rem 0;
+}
+.btn_eliminar {
+    background-color: var(--morado);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+.btn_eliminar:hover {
+    background-color: var(--morado-oscuro);
+    color: var(--verde);
+}
+.btn_editar {
+    background-color: var(--azul);
+    color: var(--morado);
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+.btn_editar:hover {
+    background-color: var(--azul-oscuro);
+    color: var(--verde);
 }
