@@ -18,14 +18,21 @@
     </header>
 
     <main>
-        <form id="form_insertar">
-            <input type="text" name="nombre" id="id_nombre" placeholder="Nombre"/>
-            <textarea name="descripcion" id="id_descripcion" placeholder="Descripción">
-            </textarea>
-            <input type="button" id="id_insertar" value="Añadir nota"/>
+        <div id="primera-columna">
+            <form id="form_insertar">
+                <input type="text" name="nombre" id="id_nombre" placeholder="Nombre"/>
+                <textarea name="descripcion" id="id_descripcion" placeholder="Descripción">
+                </textarea>
+                <input type="button" id="id_insertar" value="Añadir nota"/>
+            </form>
+        </div>
+        <div id="segunda-columna">
+        <form action="">
+            <input type="text" placeholder="">
+            <input type="button" value="Buscar">
         </form>
-
         <table id="tabla_notas"></table>
+        </div>
 
     </main>
     <form id="form_modificar">
