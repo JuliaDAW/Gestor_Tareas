@@ -83,7 +83,7 @@ table td {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-#buscar-form {
+#id_buscar {
     display: flex;
     align-items: center;
     margin: 1rem 0;

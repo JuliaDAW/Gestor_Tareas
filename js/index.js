@@ -82,7 +82,8 @@ $(document).ready(()=>{
         });
     });
 
-    $("#id_buscar").on("click", function(){ //busca resultados por nombre
+    $("#id_buscar").on("submit", function(e){ //busca resultados por nombre
+        e.preventDefault();
         let texto=$("#id_texto").val();
         
         if(!texto==""){
