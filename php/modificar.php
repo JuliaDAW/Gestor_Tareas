@@ -1,9 +1,11 @@
 <?php
+require_once("conexion.php");
+
 $conn = conectar('notas');
-$sql = "UPDATE nota SET titulo = :titulo, descripcion = :descripcion WHERE id = :id";
+$sql = "UPDATE nota SET nombre = :nombre, descripción = :descripcion WHERE id = :id";
 $stmt = $conn->prepare($sql);
 $stmt->execute(array(
-    ':titulo' => $_POST['titulo'],
+    ':nombre' => $_POST['nombre'],
     ':descripcion' => $_POST['descripcion'],
     ':id' => $_POST['id']
 ));
