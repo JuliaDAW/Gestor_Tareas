@@ -13,18 +13,14 @@
     </header>
 
     <main>
-        <form>
+        <form id="form_insertar">
             <input type="text" name="nombre" id="id_nombre" placeholder="Nombre"/>
             <input type="text" name="descripcion" id="id_descripcion" placeholder="Descripción"/>
-            <input type="submit" id="id_insertar" value="Añadir nota"/>
+            <input type="button" id="id_insertar" value="Añadir nota"/>
         </form>
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Descripción</th>
-            </tr>
-        </table>
+
+        <table id="tabla_notas"></table>
+
         <div id="Pruebas">
             <button class="btn_eliminar"></button>
             <button class="btn_editar"></button>
