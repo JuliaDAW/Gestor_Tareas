@@ -55,11 +55,17 @@ input[type="text"], textarea {
 textarea {
     min-height: 300px;
 }
-#id_insertar, #id_editar {
+#id_insertar, #id_editar{
     width: 100%;
     padding: 0.2rem 0.8rem;
     background-color: var(--verde);
     font-size: large;
+}
+.btn_buscar {
+    padding: 12px;
+    font-size: large;
+    background-color: var(--azul);
+    margin-left: 7px;
 }
 #form_insertar {
     display: flex;
