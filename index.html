@@ -21,7 +21,7 @@
         <div id="primera-columna">
             <form id="form_insertar">
                 <input type="text" name="nombre" id="id_nombre" placeholder="Nombre"/>
-                <textarea name="descripcion" id="id_descripcion"></textarea>
+                <textarea name="descripcion" id="id_descripcion" placeholder="Descripción"></textarea>
                 <input type="button" id="id_insertar" value="Añadir nota"/>
             </form>
         </div>
@@ -36,9 +36,9 @@
         </div>
     </main>
     <form id="form_modificar">
-        <input type="text" name="nombre" id="nota_id"/>
+        <input type="text" name="nombre" id="nota_id" placeholder="ID" readonly/>
         <input type="text" name="nombre" id="nota_nombre" placeholder="Nombre"/>
-        <input type="text" name="descripcion" id="nota_descripcion" placeholder="Descripción"/>
+        <textarea name="descripcion" id="nota_descripcion" placeholder="Descripción"></textarea>
         <input type="button" id="id_editar" value="Editar nota"/>
     </form>
 </body>
