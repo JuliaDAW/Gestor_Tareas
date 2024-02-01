@@ -27,13 +27,11 @@ $(document).ready(()=>{
             $.ajax({
                 type: "post",
                 url: "php/getTareas.php",
-                data: {nocache: Math.random()},
+                data: {id: n_id, nocache: Math.random()},
                 dataType: "json",
                 success: function(datos){
                     $(datos).each(function(nota){
-                        if($this.id==n_id){
-                            
-                        }
+                        
                     })
                 },
                 error: function(){
@@ -58,6 +56,24 @@ $(document).ready(()=>{
                 }
             });
         }
+    });
+
+    $("#id_editar").on("click", function(){
+        let n_id=$("#nota_id").val();
+        let n_nombre=$("#nota_nombre").val();
+        let n_descripcion=$("#nota_descripcion").val();
+        $.ajax({
+            type:"post",
+            url: "php/modificar.php",
+            data: {id: n_id, nombre: n_nombre, descripcion: n_descripcion, nocache:  Math.random()},
+            dataType: "json",
+            success: function(datos){
+
+            },
+            error: function(){
+                window.alert("Se ha producido un error");
+            }
+        });
     });
 });
 
