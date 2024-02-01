@@ -89,7 +89,7 @@ $(document).ready(()=>{
             $.ajax({
                 type: "post",
                 url: "php/getTareas.php",
-                data: {},
+                data: {nombre: texto, nocache: Math.random()},
                 dataType: "json",
                 success: function(datos){
                     console.log(datos);

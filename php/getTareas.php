@@ -6,14 +6,13 @@
     if(isset($_POST["id"])) {
         $sql = $sql . " WHERE id=:id";
     }
+    if(isset($_POST["nombre"])) {
+        $sql = $sql . "WHERE nombre LIKE ':nombre'";
+    }
     $stmt = $conn->prepare($sql);
     if(isset($_POST['id'])) {
         $stmt->bindParam(':id', $_POST['id']);
     }
-    if(isset($_POST["nombre"])) {
-        $sql = $sql . "WHERE nombre LIKE '%:nombre%'";
-    }
-    $stmt = $conn->prepare($sql);
     if(isset($_POST['nombre'])) {
         $stmt->bindParam(':nombre', $_POST['nombre']);
     }
