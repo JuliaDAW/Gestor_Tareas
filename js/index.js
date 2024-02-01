@@ -42,6 +42,7 @@ $(document).ready(()=>{
 
         if($(e.target).attr("id_modificar")){ //mostrar nota a modificar
             $("#form_modificar").css("display", "block");
+            $("#backdrop").css("display", "block");
             let n_id=$(e.target).attr("id_modificar");
 
             $.ajax({
