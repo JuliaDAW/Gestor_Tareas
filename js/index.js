@@ -82,7 +82,7 @@ $(document).ready(()=>{
         });
     });
 
-    $("#id_buscar").on("click", function(){
+    $("#id_buscar").on("click", function(){ //busca resultados por nombre
         let texto=$("#id_texto").val();
         
         if(!texto==""){
@@ -92,14 +92,25 @@ $(document).ready(()=>{
                 data: {nombre: texto, nocache: Math.random()},
                 dataType: "json",
                 success: function(datos){
-                    console.log(datos);
+                    limpiar_tabla();
+                    $(datos).each(function(nota){
+                        $("#tabla_notas").append("<tr>"+
+                            "<td>"+this.id+"</td>"+
+                            "<td>"+this.nombre+"</td>"+
+                            "<td>"+this.descripción+"</td>"+
+                            "<td> <button id_modificar='"+this.id+"'>Modificar</button> </td>"+
+                            "<td> <button id_eliminar='"+this.id+"'>Eliminar</button> </td>"+
+                        "</tr>");
+                    });
                 },
                 error: function(){
                     window.alert("Se ha producido un error");
                 }
             });
         }
-    })
+    });
+
+    $("#id_mostrar").on("click", mostrar_notas); //vuelve a mostrar todas las notas
 });
 
 function mostrar_notas(){ //muestra las notas de la base de datos
