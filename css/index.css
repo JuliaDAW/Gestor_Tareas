@@ -57,6 +57,14 @@ input[type="text"], textarea {
     justify-content: center;
     margin: 1rem 0;
 }
+table {
+    border-collapse: collapse;
+}
+table td {
+    padding: 0.5rem;
+    border: 1px solid var(--morado);
+
+}
 #form_modificar {
     position: absolute;
     display: none;
