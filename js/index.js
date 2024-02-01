@@ -145,6 +145,7 @@ function limpiar_tabla(){ //limpia la tabla de notas
     $("#tabla_notas").empty();
 
     $("#tabla_notas").append("<tr>"+
+        "<th></th>"+
         "<th>ID</th>"+
         "<th>Nombre</th>"+
         "<th>Descripción</th>"+
