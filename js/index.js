@@ -60,7 +60,7 @@ $(document).ready(()=>{
         }
     });
 
-    $("#id_editar").on("click", function(){
+    $("#id_editar").on("click", function(){ //editar nota
         let n_id=$("#nota_id").val();
         let n_nombre=$("#nota_nombre").val();
         let n_descripcion=$("#nota_descripcion").val();
@@ -71,7 +71,8 @@ $(document).ready(()=>{
             data: {id: n_id, nombre: n_nombre, descripcion: n_descripcion, nocache:  Math.random()},
             dataType: "json",
             success: function(datos){
-                console.log("modificado");
+                mostrar_notas();
+                $("#form_modificar").trigger("reset");
             },
             error: function(){
                 window.alert("Se ha producido un error");
