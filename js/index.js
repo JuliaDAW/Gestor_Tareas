@@ -40,7 +40,7 @@ $(document).ready(()=>{
             });
         }
 
-        if($(e.target).attr("id_modificar")){ //mostrar nota a modificar
+        if($(e.target).attr("id_modificar")){ //mostrar nota a modificar 
             let n_id=$(e.target).attr("id_modificar");
 
             $.ajax({
