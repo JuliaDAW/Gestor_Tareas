@@ -42,7 +42,7 @@ $(document).ready(()=>{
 
         if($(e.target).attr("id_modificar")){ //mostrar nota a modificar
             $("#form_modificar").css("display", "block");
-            $("#backdrop").css("display", "block");
+            $("#backdrop").css("display", "block").on("click", ocultarModificar);
             let n_id=$(e.target).attr("id_modificar");
 
             $.ajax({
@@ -69,6 +69,8 @@ $(document).ready(()=>{
         let n_nombre=$("#nota_nombre").val();
         let n_descripcion=$("#nota_descripcion").val();
 
+
+
         $.ajax({
             type:"post",
             url: "php/modificar.php",
@@ -76,6 +78,7 @@ $(document).ready(()=>{
             dataType: "json",
             success: function(datos){
                 mostrar_notas();
+                ocultarModificar();
                 $("#form_modificar").trigger("reset");
             },
             error: function(){
@@ -152,4 +155,9 @@ function limpiar_tabla(){ //limpia la tabla de notas
         "<th>Nombre</th>"+
         "<th>Descripción</th>"+
     "</tr>");
+}
+
+function ocultarModificar(){
+    $("#backdrop").css("display", "none");
+    $("#form_modificar").css("display", "none");
 }
