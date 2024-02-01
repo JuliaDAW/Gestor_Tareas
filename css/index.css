@@ -20,12 +20,13 @@ button {
     border-radius: 0.5rem;
 
 }
+body {
+    font-family: 'Roboto', sans-serif;
+}
 
 h1 {
-    font-family: 'Sixtyfour', sans-serif;
     font-size: 3rem;
     line-height: 1rem;
-    color: var(--morado-oscuro);
     margin: 1rem 0;
 }
 .btn_eliminar {
@@ -49,4 +50,18 @@ h1 {
 .btn_editar:hover {
     background-color: var(--azul-oscuro);
     color: var(--verde);
+}
+header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--morado);
+    color: white;
+}
+#form_insertar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
 }
