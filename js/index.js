@@ -94,7 +94,8 @@ $(document).ready(()=>{
                 success: function(datos){
                     limpiar_tabla();
                     $(datos).each(function(nota){
-                        $("#tabla_notas").append("<tr>"+
+                        $("#tabla_notas").append("<tr id='"+this.id+"'>"+
+                            "<td> <input type='checkbox' id='"+this.id+"'/> </td>"+
                             "<td>"+this.id+"</td>"+
                             "<td>"+this.nombre+"</td>"+
                             "<td>"+this.descripción+"</td>"+
@@ -123,7 +124,8 @@ function mostrar_notas(){ //muestra las notas de la base de datos
         dataType: "json",
         success: function(datos){
             $(datos).each(function(nota){
-                $("#tabla_notas").append("<tr>"+
+                $("#tabla_notas").append("<tr id_fila='"+this.id+"'>"+
+                    "<td> <input type='checkbox' id='"+this.id+"'/> </td>"+
                     "<td>"+this.id+"</td>"+
                     "<td>"+this.nombre+"</td>"+
                     "<td>"+this.descripción+"</td>"+
