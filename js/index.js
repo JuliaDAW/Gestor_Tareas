@@ -31,7 +31,9 @@ $(document).ready(()=>{
                 dataType: "json",
                 success: function(datos){
                     $(datos).each(function(nota){
-                        
+                        $("#nota_id").val(this.id);
+                        $("#nota_nombre").val(this.nombre);
+                        $("#nota_descripcion").val(this.descripción);
                     })
                 },
                 error: function(){
@@ -62,13 +64,14 @@ $(document).ready(()=>{
         let n_id=$("#nota_id").val();
         let n_nombre=$("#nota_nombre").val();
         let n_descripcion=$("#nota_descripcion").val();
+
         $.ajax({
             type:"post",
             url: "php/modificar.php",
             data: {id: n_id, nombre: n_nombre, descripcion: n_descripcion, nocache:  Math.random()},
             dataType: "json",
             success: function(datos){
-
+                console.log("modificado");
             },
             error: function(){
                 window.alert("Se ha producido un error");
