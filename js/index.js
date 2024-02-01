@@ -97,7 +97,7 @@ $(document).ready(()=>{
                     $(datos).each(function(nota){
                         $("#tabla_notas").append("<tr id='"+this.id+"'>"+
                             "<td> <input type='checkbox' id='"+this.id+"'/> </td>"+
-                            "<td>"+this.id+"</td>"+
+                            "<td class='centrar_id'>"+this.id+"</td>"+
                             "<td>"+this.nombre+"</td>"+
                             "<td>"+this.descripción+"</td>"+
                             "<td> <button id_modificar='"+this.id+"'>Modificar</button> </td>"+
@@ -127,7 +127,7 @@ function mostrar_notas(){ //muestra las notas de la base de datos
             $(datos).each(function(nota){
                 $("#tabla_notas").append("<tr id_fila='"+this.id+"'>"+
                     "<td> <input type='checkbox' id='"+this.id+"'/> </td>"+
-                    "<td>"+this.id+"</td>"+
+                    "<td class='centrar_id'>"+this.id+"</td>"+
                     "<td>"+this.nombre+"</td>"+
                     "<td>"+this.descripción+"</td>"+
                     "<td> <button id_modificar='"+this.id+"'>Modificar</button> </td>"+
