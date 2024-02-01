@@ -77,9 +77,11 @@ textarea {
     margin: 1rem 0;
 }
 table {
-    text-align: center;
     border-collapse: collapse;
     width: 100%;
+}
+.centrar_id{
+    text-align: center;
 }
 table td {
     padding: 0.5rem;
