@@ -12,6 +12,10 @@
     box-sizing: border-box;
 }
 
+h1 {
+    text-align: center;
+}
+
 button, input[type="button"] {
     cursor: pointer;
     border: none;
@@ -25,13 +29,9 @@ body {
 
 h1 {
     font-size: 2.5rem;
-    line-height: 1rem;
-    margin: 1rem 0;
     font-weight: 500;
 }
 header {
-    display: flex;
-    align-items: center;
     padding: 1rem;
     background-color: var(--morado);
     color: white;
@@ -39,14 +39,15 @@ header {
 main {
     display: grid;
     grid-template-columns:  0.8fr 1.2fr;
-    margin: 0 auto;
+    margin: 1rem auto;
     column-gap: 3rem;
-    width: 1200px;
+    width: 1000px;
     max-width: calc(100% - 2rem);
 }
 input[type="text"], textarea {
     width: 100%;
-    padding: 0.2rem 0.8rem;
+    padding: 0 0.8rem;
+    height: 12px;
     font-size: 1rem;
     border-radius: 0.5rem;
     border: 1px solid var(--morado);
@@ -56,6 +57,8 @@ input[type="text"], textarea {
 }
 textarea {
     min-height: 300px;
+    resize: none;
+    padding: 0.8rem;
 }
 #id_insertar, #id_editar{
     width: 100%;
@@ -64,10 +67,13 @@ textarea {
     font-size: large;
 }
 .btn_buscar {
-    padding: 12px;
+    padding: 7px;
+    margin-left: -0.5rem;
     font-size: large;
     background-color: var(--azul);
-    margin-left: 7px;
+    border: 1px solid var(--morado);
+    border-radius: 0 0.5rem 0.5rem 0;
+    border-left: none;
 }
 #form_insertar {
     display: flex;
@@ -114,6 +120,9 @@ table td {
 }
 
 @media screen and (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
     main {
         grid-template-columns: 1fr;
     }
