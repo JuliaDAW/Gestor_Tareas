@@ -62,6 +62,11 @@ $(document).ready(()=>{
                 }
             });
         }
+
+        if($(e.target).attr("id_check")){ //seleccionar notas checkbox
+            notas.push($(e.target).attr("id_check"));
+            console.log(notas);
+        }
     });
 
     $("#id_editar").on("click", function(){ //editar nota
@@ -100,8 +105,8 @@ $(document).ready(()=>{
                 success: function(datos){
                     limpiar_tabla();
                     $(datos).each(function(nota){
-                        $("#tabla_notas").append("<tr id='"+this.id+"'>"+
-                            "<td> <input type='checkbox' id='"+this.id+"'/> </td>"+
+                        $("#tabla_notas").append("<tr>"+
+                            "<td> <input type='checkbox' id_check='"+this.id+"'/> </td>"+
                             "<td class='centrar_id'>"+this.id+"</td>"+
                             "<td>"+this.nombre+"</td>"+
                             "<td>"+this.descripción+"</td>"+
@@ -118,7 +123,31 @@ $(document).ready(()=>{
     });
 
     $("#id_mostrar").on("click", mostrar_notas); //vuelve a mostrar todas las notas
+
+    $("#id_borrar").on("click", function(){
+        for(let i=0; i<notas.length; i++){
+            $.ajax({
+                type: "post",
+                url: "php/eliminar.php",
+                data: {id: notas[i], nocache: Math.random()},
+                dataType: "json",
+                success: function(datos){
+                    console.log(datos);
+                    console.log(notas[i]);
+                },
+                error: function(){
+                    window.alert("Se ha producido un error");
+                }
+            });
+        }
+
+        notas.splice(0, notas.length);
+        console.log(notas);
+        mostrar_notas();
+    });
 });
+
+let notas=[]; //array con id de las notas a eliminar
 
 function mostrar_notas(){ //muestra las notas de la base de datos
     limpiar_tabla();
@@ -130,8 +159,8 @@ function mostrar_notas(){ //muestra las notas de la base de datos
         dataType: "json",
         success: function(datos){
             $(datos).each(function(nota){
-                $("#tabla_notas").append("<tr id_fila='"+this.id+"'>"+
-                    "<td> <input type='checkbox' id='"+this.id+"'/> </td>"+
+                $("#tabla_notas").append("<tr>"+
+                    "<td> <input type='checkbox' id_check='"+this.id+"'/> </td>"+
                     "<td class='centrar_id'>"+this.id+"</td>"+
                     "<td>"+this.nombre+"</td>"+
                     "<td>"+this.descripción+"</td>"+
