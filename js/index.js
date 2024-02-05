@@ -92,7 +92,7 @@ $(document).ready(()=>{
                             "<td> <input type='checkbox' id_check='"+this.id+"'/> </td>"+
                             "<td class='centrar_id'>"+this.id+"</td>"+
                             "<td>"+this.nombre+"</td>"+
-                            "<td>"+this.descripción+"</td>"+
+                            "<td class='descripcion'>"+this.descripción+"</td>"+
                             "<td> <button id_modificar='"+this.id+"'>Modificar</button> </td>"+
                         "</tr>");
                     });
@@ -142,7 +142,7 @@ function mostrar_notas(){ //muestra las notas de la base de datos
                     "<td> <input type='checkbox' id_check='"+this.id+"'/> </td>"+
                     "<td class='centrar_id'>"+this.id+"</td>"+
                     "<td>"+this.nombre+"</td>"+
-                    "<td>"+this.descripción+"</td>"+
+                    "<td class='descripcion'>"+this.descripción+"</td>"+
                     "<td> <button id_modificar='"+this.id+"'>Modificar</button> </td>"+
                 "</tr>");
             });
