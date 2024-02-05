@@ -110,16 +110,7 @@ $(document).ready(()=>{
                 data: {nombre: texto, nocache: Math.random()},
                 dataType: "json",
                 success: function(datos){
-                    limpiar_tabla();
-                    $(datos).each(function(nota){
-                        $("#tabla_notas").append("<tr>"+
-                            "<td> <input type='checkbox' id_check='"+this.id+"'/> </td>"+
-                            "<td class='centrar_id'>"+this.id+"</td>"+
-                            "<td>"+this.nombre+"</td>"+
-                            "<td class='descripcion'>"+this.descripción+"</td>"+
-                            "<td> <button id_modificar='"+this.id+"'>Modificar</button> </td>"+
-                        "</tr>");
-                    });
+                    datos_ajax(datos);
                 },
                 error: function(){
                     window.alert("Se ha producido un error");
@@ -156,16 +147,7 @@ $(document).ready(()=>{
             data: {id: notas, hecho: "si", nocache: Math.random()},
             dataType: "json",
             success: function(datos){
-                limpiar_tabla();
-                $(datos).each(function(nota){
-                    $("#tabla_notas").append("<tr>"+
-                            "<td> <input type='checkbox' id_check='"+this.id+"'/> </td>"+
-                            "<td class='centrar_id'>"+this.id+"</td>"+
-                            "<td>"+this.nombre+"</td>"+
-                            "<td class='descripcion'>"+this.descripción+"</td>"+
-                            "<td> <button id_modificar='"+this.id+"'>Modificar</button> </td>"+
-                        "</tr>");
-                });
+                datos_ajax(datos);
             },
             error: function(){
                 window.alert("Se ha producido un error");
@@ -182,16 +164,7 @@ $(document).ready(()=>{
             data: {id: notas, hecho: "no", nocache: Math.random()},
             dataType: "json",
             success: function(datos){
-                limpiar_tabla();
-                $(datos).each(function(nota){
-                    $("#tabla_notas").append("<tr>"+
-                            "<td> <input type='checkbox' id_check='"+this.id+"'/> </td>"+
-                            "<td class='centrar_id'>"+this.id+"</td>"+
-                            "<td>"+this.nombre+"</td>"+
-                            "<td class='descripcion'>"+this.descripción+"</td>"+
-                            "<td> <button id_modificar='"+this.id+"'>Modificar</button> </td>"+
-                        "</tr>");
-                });
+                datos_ajax(datos);
             },
             error: function(){
                 window.alert("Se ha producido un error");
@@ -223,12 +196,27 @@ function mostrar_notas(){ //muestra las notas de la base de datos
                     "<td>"+this.nombre+"</td>"+
                     "<td class='descripcion'>"+this.descripción+"</td>"+
                     "<td> <button id_modificar='"+this.id+"'>Modificar</button> </td>"+
+                    "<td> </td>"+
                 "</tr>");
             });
         },
         error: function(){
             window.alert("Se ha producido un error");
         }
+    });
+}
+
+function datos_ajax(datos){ //muestra datos recibidos por php
+    limpiar_tabla();
+    $(datos).each(function(nota){
+        $("#tabla_notas").append("<tr>"+
+            "<td> <input type='checkbox' id_check='"+this.id+"'/> </td>"+
+            "<td class='centrar_id'>"+this.id+"</td>"+
+            "<td>"+this.nombre+"</td>"+
+            "<td class='descripcion'>"+this.descripción+"</td>"+
+            "<td> <button id_modificar='"+this.id+"'>Modificar</button> </td>"+
+            "<td> </td>"+
+        "</tr>");
     });
 }
 
