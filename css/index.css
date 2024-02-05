@@ -5,8 +5,6 @@
     --azul: #b7c0ee;
     --verde: #cbf3d2;
     --rojo: #ff7e67;
-    --rojo-oscuro: #ff3e3e;
-    --amarillo: #f7f5dd;
 }
 
 * {
@@ -25,13 +23,6 @@ button, input[type="button"] {
     outline: none;
     font-weight: bold;
     border-radius: 0.5rem;
-}
-button[id_modificar] {
-    background-color: var(--amarillo);
-    color: black;
-    padding: 0.5rem;
-    transition: transform 0.5s, background-color 0.3s;
-
 }
 body {
     font-family: 'Roboto', sans-serif;
@@ -126,6 +117,7 @@ textarea {
 }
 table {
     border-collapse: collapse;
+    width: 100%;
 }
 .centrar_id{
     text-align: center;
@@ -133,16 +125,6 @@ table {
 td, th {
     padding: 0.5rem;
     border: 1px solid var(--morado);
-}
-tr {
-    transition: background-color 0.3s, color 0.3s;
-}
-td:has(input[type="checkbox"]) {
-    text-align: center;
-}
-tr:has(input[type="checkbox"]:checked) {
-    background-color: var(--morado);
-    color: white;
 }
 #form_modificar {
     z-index: 10;
@@ -176,9 +158,6 @@ tr:has(input[type="checkbox"]:checked) {
     display: block;
     max-width: 45px;
 
-}
-.btn_borrar:hover {
-    background-color: var(--rojo-oscuro);
 }
 #acciones_grupales {
     padding: 1rem 0;
