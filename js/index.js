@@ -111,7 +111,6 @@ $(document).ready(()=>{
                             "<td>"+this.nombre+"</td>"+
                             "<td>"+this.descripción+"</td>"+
                             "<td> <button id_modificar='"+this.id+"'>Modificar</button> </td>"+
-                            "<td> <button id_eliminar='"+this.id+"'>Eliminar</button> </td>"+
                         "</tr>");
                     });
                 },
