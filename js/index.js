@@ -29,7 +29,7 @@ $(document).ready(()=>{
         }
 
         if($(e.target).attr("id_modificar")){ //mostrar nota a modificar
-            $("#form_modificar").css("display", "block");
+            $("#form_modificar").css("display", "flex");
             $("#backdrop").css("display", "block").on("click", ocultarModificar);
             let n_id=$(e.target).attr("id_modificar");
 
@@ -124,6 +124,8 @@ $(document).ready(()=>{
         notas.splice(0, notas.length);
         mostrar_notas();
     });
+    $btn_cerrar = $("#btn_close");
+    $btn_cerrar.on("click", ocultarModificar);
 });
 
 let notas=[]; //array con id de las notas a eliminar
@@ -161,6 +163,7 @@ function limpiar_tabla(){ //limpia la tabla de notas
         "<th>ID</th>"+
         "<th>Nombre</th>"+
         "<th>Descripción</th>"+
+        "<th>Acción</th>"+
     "</tr>");
 }
 
