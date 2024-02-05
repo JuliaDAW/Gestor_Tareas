@@ -1,3 +1,27 @@
+const errorToast = new Toastify(
+    {
+        text: "Los campos no pueden estar vacios",
+        duration: 3000,
+        close: true,
+        gravity: "top",
+        position: "center",
+        backgroundColor: "linear-gradient(to right, #ff416c, #ff4b2b)",
+        stopOnFocus: true,
+    }
+)
+const selectMoreThanOne = new Toastify(
+    {
+        text: "Seleccione una o más notas",
+        duration: 3000,
+        close: true,
+        gravity: "top",
+        position: "center",
+        backgroundColor: "linear-gradient(to right, #ff416c, #ff4b2b)",
+        stopOnFocus: true,
+    }
+)
+
+
 $(document).ready(()=>{
     mostrar_notas();
 
@@ -19,7 +43,7 @@ $(document).ready(()=>{
                     window.alert("Se ha producido un error");
                 }
             });
-        } else{ window.alert("Por favor, rellene todos campos"); }
+        } else{ errorToast.showToast(); }
     });
 
     $("#tabla_notas").on("click", function(e){
@@ -46,7 +70,7 @@ $(document).ready(()=>{
                     })
                 },
                 error: function(){
-                    window.alert("Se ha producido un error");
+                    errorToast.showToast();
                 }
             });
         }
@@ -69,10 +93,10 @@ $(document).ready(()=>{
                     $("#form_modificar").trigger("reset");
                 },
                 error: function(){
-                    window.alert("Se ha producido un error");
+                    errorToast.showToast();
                 }
             });
-        } else{ window.alert("Por favor, rellene todos campos"); }
+        } else{ errorToast.showToast(); }
     });
 
     $("#id_buscar").on("submit", function(e){ //busca resultados por nombre
@@ -102,7 +126,7 @@ $(document).ready(()=>{
                     window.alert("Se ha producido un error");
                 }
             });
-        } else { window.alert("Escriba algo para realizar la búsqueda"); }
+        } else {  errorToast.showToast();}
     });
 
     $(".btn_reset").on("click", mostrar_notas); //vuelve a mostrar todas las notas
@@ -121,7 +145,7 @@ $(document).ready(()=>{
                     window.alert("Se ha producido un error");
                 }
             });
-        } else { window.alert("Seleccione una o más notas"); }
+        } else { selectMoreThanOne.showToast(); }
 
         notas.splice(0, notas.length);
     });
