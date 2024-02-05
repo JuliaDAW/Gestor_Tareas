@@ -4,6 +4,7 @@
     --azul-oscuro: #7067cf;
     --azul: #b7c0ee;
     --verde: #cbf3d2;
+    --rojo: #ff7e67;
 }
 
 * {
@@ -67,7 +68,7 @@ input[type="text"]::placeholder, textarea::placeholder {
     color: white;
     padding: 0.5rem;
     border-radius: 0.5rem;
-    margin: 0 0.5rem;
+    margin: 0 0 0 1rem;
     transition: transform 0.5s, background-color 0.3s;
 
 }
@@ -87,7 +88,7 @@ textarea {
 }
 #id_insertar, #id_editar{
     width: 100%;
-    padding: 0.2rem 0.8rem;
+    padding: 0.4rem 0.8rem;
     background-color: var(--verde);
     font-size: large;
 }
@@ -148,6 +149,23 @@ table td {
     backdrop-filter: blur(5px);
     z-index: 1;
     display: none;
+}
+.btn_borrar {
+    background-color: var(--rojo);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: transform 0.5s, background-color 0.3s;
+    display: block;
+    max-width: 45px;
+
+}
+#acciones_grupales {
+    padding: 1rem 0;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+
 }
 
 @media screen and (max-width: 768px) {
