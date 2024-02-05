@@ -122,7 +122,7 @@ $(document).ready(()=>{
         }
     });
 
-    $("#id_mostrar").on("click", mostrar_notas); //vuelve a mostrar todas las notas
+    $(".btn_reset").on("click", mostrar_notas); //vuelve a mostrar todas las notas
 
     $("#id_borrar").on("click", function(){
         for(let i=0; i<notas.length; i++){
