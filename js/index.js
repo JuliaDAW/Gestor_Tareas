@@ -107,18 +107,20 @@ $(document).ready(()=>{
     $(".btn_reset").on("click", mostrar_notas); //vuelve a mostrar todas las notas
 
     $("#id_borrar").on("click", function(){ //borrar varias notas
-        $.ajax({
-            type: "post",
-            url: "php/eliminar.php",
-            data: {id: notas, nocache: Math.random()},
-            dataType: "json",
-            success: function(datos){
-                mostrar_notas();
-            },
-            error: function(){
-                window.alert("Se ha producido un error");
-            }
-        });
+        if(notas.length>0){
+            $.ajax({
+                type: "post",
+                url: "php/eliminar.php",
+                data: {id: notas, nocache: Math.random()},
+                dataType: "json",
+                success: function(datos){
+                    mostrar_notas();
+                },
+                error: function(){
+                    window.alert("Se ha producido un error");
+                }
+            });
+        } else { window.alert("Seleccione una o más notas"); }
 
         notas.splice(0, notas.length);
     });
