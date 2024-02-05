@@ -5,7 +5,7 @@ $(document).ready(()=>{
         let n_nombre=$("#id_nombre").val();
         let n_descripcion=$("#id_descripcion").val();
 
-        if(!(n_nombre=="" || n_descripcion=="")){
+        if(n_nombre!="" && n_descripcion!=""){
             $.ajax({
                 type: "post",
                 url: "php/insertar.php",
@@ -19,7 +19,7 @@ $(document).ready(()=>{
                     window.alert("Se ha producido un error");
                 }
             });
-        } else{ window.alert("Por favor, rellene los campos"); }
+        } else{ window.alert("Por favor, rellene todos campos"); }
     });
 
     $("#tabla_notas").on("click", function(e){
@@ -57,22 +57,22 @@ $(document).ready(()=>{
         let n_nombre=$("#nota_nombre").val();
         let n_descripcion=$("#nota_descripcion").val();
 
-
-
-        $.ajax({
-            type:"post",
-            url: "php/modificar.php",
-            data: {id: n_id, nombre: n_nombre, descripcion: n_descripcion, nocache:  Math.random()},
-            dataType: "json",
-            success: function(datos){
-                mostrar_notas();
-                ocultarModificar();
-                $("#form_modificar").trigger("reset");
-            },
-            error: function(){
-                window.alert("Se ha producido un error");
-            }
-        });
+        if(n_nombre!="" && n_descripcion!=""){
+            $.ajax({
+                type:"post",
+                url: "php/modificar.php",
+                data: {id: n_id, nombre: n_nombre, descripcion: n_descripcion, nocache:  Math.random()},
+                dataType: "json",
+                success: function(datos){
+                    mostrar_notas();
+                    ocultarModificar();
+                    $("#form_modificar").trigger("reset");
+                },
+                error: function(){
+                    window.alert("Se ha producido un error");
+                }
+            });
+        } else{ window.alert("Por favor, rellene todos campos"); }
     });
 
     $("#id_buscar").on("submit", function(e){ //busca resultados por nombre
@@ -101,7 +101,7 @@ $(document).ready(()=>{
                     window.alert("Se ha producido un error");
                 }
             });
-        }
+        } else { window.alert("Escriba algo para realizar la búsqueda"); }
     });
 
     $(".btn_reset").on("click", mostrar_notas); //vuelve a mostrar todas las notas
@@ -113,8 +113,7 @@ $(document).ready(()=>{
             data: {id: notas, nocache: Math.random()},
             dataType: "json",
             success: function(datos){
-                console.log(datos);
-                console.log(notas);
+                mostrar_notas();
             },
             error: function(){
                 window.alert("Se ha producido un error");
@@ -122,7 +121,6 @@ $(document).ready(()=>{
         });
 
         notas.splice(0, notas.length);
-        mostrar_notas();
     });
     $btn_cerrar = $("#btn_close");
     $btn_cerrar.on("click", ocultarModificar);
