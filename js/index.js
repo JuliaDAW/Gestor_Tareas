@@ -23,21 +23,9 @@ $(document).ready(()=>{
     });
 
     $("#tabla_notas").on("click", function(e){
-        if($(e.target).attr("id_eliminar")){ //eliminar nota
-            let n_id=$(e.target).attr("id_eliminar");
-
-            $.ajax({
-                type: "post",
-                url: "php/eliminar.php",
-                data: {id: n_id, nocache: Math.random()},
-                dataType: "json",
-                success: function(datos){
-                    mostrar_notas();
-                },
-                error: function(){
-                    window.alert("Se ha producido un error");
-                }
-            });
+        if($(e.target).attr("id_check")){ //checkbox añadir id al array
+            notas.push($(e.target).attr("id_check"));
+            console.log(notas);
         }
 
         if($(e.target).attr("id_modificar")){ //mostrar nota a modificar
@@ -61,11 +49,6 @@ $(document).ready(()=>{
                     window.alert("Se ha producido un error");
                 }
             });
-        }
-
-        if($(e.target).attr("id_check")){ //seleccionar notas checkbox
-            notas.push($(e.target).attr("id_check"));
-            console.log(notas);
         }
     });
 
@@ -123,25 +106,22 @@ $(document).ready(()=>{
 
     $(".btn_reset").on("click", mostrar_notas); //vuelve a mostrar todas las notas
 
-    $("#id_borrar").on("click", function(){
-        for(let i=0; i<notas.length; i++){
-            $.ajax({
-                type: "post",
-                url: "php/eliminar.php",
-                data: {id: notas[i], nocache: Math.random()},
-                dataType: "json",
-                success: function(datos){
-                    console.log(datos);
-                    console.log(notas[i]);
-                },
-                error: function(){
-                    window.alert("Se ha producido un error");
-                }
-            });
-        }
+    $("#id_borrar").on("click", function(){ //borrar varias notas
+        $.ajax({
+            type: "post",
+            url: "php/eliminar.php",
+            data: {id: notas, nocache: Math.random()},
+            dataType: "json",
+            success: function(datos){
+                console.log(datos);
+                console.log(notas);
+            },
+            error: function(){
+                window.alert("Se ha producido un error");
+            }
+        });
 
         notas.splice(0, notas.length);
-        console.log(notas);
         mostrar_notas();
     });
 });
@@ -164,7 +144,6 @@ function mostrar_notas(){ //muestra las notas de la base de datos
                     "<td>"+this.nombre+"</td>"+
                     "<td>"+this.descripción+"</td>"+
                     "<td> <button id_modificar='"+this.id+"'>Modificar</button> </td>"+
-                    "<td> <button id_eliminar='"+this.id+"'>Eliminar</button> </td>"+
                 "</tr>");
             });
         },
