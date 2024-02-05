@@ -118,7 +118,6 @@ $(document).ready(()=>{
                             "<td>"+this.nombre+"</td>"+
                             "<td class='descripcion'>"+this.descripción+"</td>"+
                             "<td> <button id_modificar='"+this.id+"'>Modificar</button> </td>"+
-                            "<td> <input type='checkbox' id_hecho='"+this.id+"'/> </td>"+
                         "</tr>");
                     });
                 },
@@ -172,7 +171,6 @@ function mostrar_notas(){ //muestra las notas de la base de datos
                     "<td>"+this.nombre+"</td>"+
                     "<td class='descripcion'>"+this.descripción+"</td>"+
                     "<td> <button id_modificar='"+this.id+"'>Modificar</button> </td>"+
-                    "<td> <input type='checkbox' id_hecho='"+this.id+"'/> </td>"+
                 "</tr>");
             });
         },
