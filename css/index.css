@@ -125,12 +125,13 @@ textarea {
     gap: 1rem;
 }
 table {
-
     border-collapse: collapse;
-    max-width: 100%;
+    width: 100%;
 }
 .descripcion {
-    word-wrap: break-word;
+    overflow: hidden;
+    max-width: 10vw;
+    text-overflow: ellipsis;
 }
 .centrar_id{
     text-align: center;
