@@ -28,11 +28,11 @@ body {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 500;
 }
 header {
-    padding: 1rem;
+    padding: 0.5rem;
     background-color: var(--morado);
     color: white;
 }
@@ -53,7 +53,32 @@ input[type="text"], textarea {
     border: 1px solid var(--morado);
     outline: none;
     min-height: 45px;
-    margin: 0.5rem 0;
+    transition: border-color 0.3s;
+}
+input[type="text"]:focus, textarea:focus {
+    border-color: var(--azul-oscuro);
+}
+input[type="text"]::placeholder, textarea::placeholder {
+    color: var(--azul-oscuro);
+    opacity: 0.6;
+}
+.btn_reset {
+    background-color: var(--morado);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin: 0 0.5rem;
+    transition: transform 0.5s, background-color 0.3s;
+
+}
+.btn_reset:hover span svg {
+    transform: rotate(360deg);
+}
+.btn_reset span svg {
+    transition: transform 0.5s;
+}
+.btn_reset:hover {
+    background-color: var(--morado-oscuro);
 }
 textarea {
     min-height: 300px;
@@ -74,6 +99,12 @@ textarea {
     border: 1px solid var(--morado);
     border-radius: 0 0.5rem 0.5rem 0;
     border-left: none;
+    transition: background-color 0.3s;
+    height: 45px;
+    overflow: hidden;
+}
+.btn_buscar:hover {
+    background-color: var(--azul-oscuro);
 }
 #form_insertar {
     display: flex;
@@ -81,6 +112,7 @@ textarea {
     align-items: center;
     justify-content: center;
     margin: 1rem 0;
+    gap: 1rem;
 }
 table {
     border-collapse: collapse;
@@ -105,7 +137,6 @@ table td {
 #id_buscar {
     display: flex;
     justify-content: right;
-    align-items: center;
     margin: 1rem 0;
 }
 #backdrop {
