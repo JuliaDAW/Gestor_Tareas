@@ -200,6 +200,27 @@ tr:has(input[type="checkbox"]:checked) {
     max-width: 45px;
 
 }
+#btn_hecho {
+    background-color: var(--verde);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: transform 0.5s, background-color 0.3s;
+    display: block;
+    max-width: 45px;
+
+}
+#btn_nohecho {
+    background-color: var(--azul-oscuro);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: transform 0.5s, background-color 0.3s;
+    display: block;
+    max-width: 45px;
+
+
+}
 .btn_borrar:hover {
     background-color: var(--rojo-oscuro);
 }
@@ -208,7 +229,10 @@ tr:has(input[type="checkbox"]:checked) {
     display: flex;
     gap: 0.5rem;
     flex-direction: column;
-
+}
+#acciones {
+    display: flex;
+    gap: 0.5rem;
 }
 
 @media screen and (max-width: 768px) {
