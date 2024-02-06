@@ -21,7 +21,6 @@ const selectMoreThanOne = new Toastify(
     }
 )
 
-
 $(document).ready(()=>{
     mostrar_notas();
 
@@ -99,9 +98,10 @@ $(document).ready(()=>{
         } else{ errorToast.showToast(); }
     });
 
-    $("#id_buscar").on("submit", function(e){ //busca resultados por nombre
+    $("#id_buscar").on("submit", function(e){ //busca resultados por nombre y hecho
         e.preventDefault();
         let texto=$("#id_texto").val();
+        let radio=$("input[name=radio_hecho]:checked").val();
         
         if(!texto==""){
             $.ajax({
@@ -116,7 +116,7 @@ $(document).ready(()=>{
                     window.alert("Se ha producido un error");
                 }
             });
-        } else {  errorToast.showToast();}
+        } else { errorToast.showToast(); }
     });
 
     $(".btn_reset").on("click", mostrar_notas); //vuelve a mostrar todas las notas
@@ -174,6 +174,10 @@ $(document).ready(()=>{
         notas.splice(0, notas.length);
     })
 
+    $("#radio_deseleccionar").on("click", function(){
+        $(".radio").prop("checked", false);
+    })
+
     $btn_cerrar = $("#btn_close");
     $btn_cerrar.on("click", ocultarModificar);
 });
@@ -181,24 +185,13 @@ $(document).ready(()=>{
 let notas=[]; //array con id de las notas a eliminar
 
 function mostrar_notas(){ //muestra las notas de la base de datos
-    limpiar_tabla();
-
     $.ajax({
         type: "post",
         url: "php/getTareas.php",
         data: {nocache: Math.random()},
         dataType: "json",
         success: function(datos){
-            $(datos).each(function(nota){
-                $("#tabla_notas").append("<tr>"+
-                    "<td> <input type='checkbox' id_check='"+this.id+"'/> </td>"+
-                    "<td class='centrar_id'>"+this.id+"</td>"+
-                    "<td>"+this.nombre+"</td>"+
-                    "<td class='descripcion'>"+this.descripción+"</td>"+
-                    "<td> <button id_modificar='"+this.id+"'>Modificar</button> </td>"+
-                    "<td> </td>"+
-                "</tr>");
-            });
+            datos_ajax(datos);
         },
         error: function(){
             window.alert("Se ha producido un error");
@@ -206,16 +199,20 @@ function mostrar_notas(){ //muestra las notas de la base de datos
     });
 }
 
-function datos_ajax(datos){ //muestra datos recibidos por php
+function datos_ajax(datos){ //coloca las notas en la tabla
     limpiar_tabla();
+
+    let b_hecho;
     $(datos).each(function(nota){
+        if(this.hecho==1) b_hecho="Hecho";
+        if(this.hecho==0) b_hecho="No hecho";
         $("#tabla_notas").append("<tr>"+
             "<td> <input type='checkbox' id_check='"+this.id+"'/> </td>"+
             "<td class='centrar_id'>"+this.id+"</td>"+
             "<td>"+this.nombre+"</td>"+
             "<td class='descripcion'>"+this.descripción+"</td>"+
             "<td> <button id_modificar='"+this.id+"'>Modificar</button> </td>"+
-            "<td> </td>"+
+            "<td>"+b_hecho+"</td>"+
         "</tr>");
     });
 }
