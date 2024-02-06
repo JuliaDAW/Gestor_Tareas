@@ -147,7 +147,7 @@ $(document).ready(()=>{
             data: {id: notas, hecho: "si", nocache: Math.random()},
             dataType: "json",
             success: function(datos){
-                datos_ajax(datos);
+                mostrar_notas();
             },
             error: function(){
                 selectMoreThanOne.showToast();
@@ -164,7 +164,7 @@ $(document).ready(()=>{
             data: {id: notas, hecho: "no", nocache: Math.random()},
             dataType: "json",
             success: function(datos){
-                datos_ajax(datos);
+                mostrar_notas();
             },
             error: function(){
                 selectMoreThanOne.showToast();
