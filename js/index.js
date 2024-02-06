@@ -150,7 +150,7 @@ $(document).ready(()=>{
                 datos_ajax(datos);
             },
             error: function(){
-                window.alert("Se ha producido un error");
+                selectMoreThanOne.showToast();
             }
         });
 
@@ -167,7 +167,7 @@ $(document).ready(()=>{
                 datos_ajax(datos);
             },
             error: function(){
-                window.alert("Se ha producido un error");
+                selectMoreThanOne.showToast();
             }
         });
 
