@@ -234,6 +234,9 @@ tr:has(input[type="checkbox"]:checked) {
     display: flex;
     gap: 0.5rem;
 }
+#filtros {
+    margin: 1rem 0;
+}
 
 @media screen and (max-width: 768px) {
     html {
