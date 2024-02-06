@@ -202,10 +202,8 @@ function mostrar_notas(){ //muestra las notas de la base de datos
 function datos_ajax(datos){ //coloca las notas en la tabla
     limpiar_tabla();
 
-    let b_hecho;
     $(datos).each(function(nota){
-        if(this.hecho==1) b_hecho="Hecho";
-        if(this.hecho==0) b_hecho="No hecho";
+        const b_hecho = this.hecho==1 ? "Hecho" : "No hecho";
         $("#tabla_notas").append("<tr>"+
             "<td> <input type='checkbox' id_check='"+this.id+"'/> </td>"+
             "<td class='centrar_id'>"+this.id+"</td>"+
