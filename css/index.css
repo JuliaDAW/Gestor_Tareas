@@ -3,7 +3,7 @@
     --morado: #7b287d;
     --azul-oscuro: #7067cf;
     --azul: #b7c0ee;
-    --verde: #cbf3d2;
+    --verde: rgb(82, 183, 136);;
     --rojo: #ff7e67;
     --rojo-oscuro: #ff3e3e;
     --amarillo: #f7f5dd;
@@ -26,13 +26,13 @@ button, input[type="button"] {
     outline: none;
     font-weight: bold;
     border-radius: 0.5rem;
+    color: white;
 }
 button[id_modificar] {
     background-color: var(--amarillo);
     color: black;
     padding: 0.5rem;
     transition: transform 0.5s, background-color 0.3s;
-
 }
 body {
     font-family: 'Roboto', sans-serif;
@@ -225,6 +225,9 @@ tr:has(input[type="checkbox"]:checked) {
 }
 #btn_nohecho:hover {
     background-color: var(--azul-muy-oscuro);
+}
+#btn_hecho:hover{
+    background-color: rgb(45, 106, 79);
 }
 #acciones_grupales {
     padding: 1rem 0;
