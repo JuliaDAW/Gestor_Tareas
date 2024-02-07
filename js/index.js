@@ -184,7 +184,8 @@ $(document).ready(()=>{
         $(".radio").prop("checked", false);
     })
 
-    $("#id_hecho").on("change", function(){
+    $("#id_hecho").on("change", function(){ //cambio select
+        let texto=$("#id_texto").val();
         let radio=$("#id_hecho").val();
 
         if(radio==2) radio=undefined;
@@ -192,7 +193,7 @@ $(document).ready(()=>{
         $.ajax({
             type: "post",
             url: "php/getTareas.php",
-            data: {hecho: radio, nocache: Math.random()},
+            data: {nombre: texto, hecho: radio, nocache: Math.random()},
             dataType: "json",
             success: function(datos){
                 datos_ajax(datos);
