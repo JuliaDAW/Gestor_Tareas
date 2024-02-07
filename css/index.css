@@ -7,6 +7,7 @@
     --rojo: #ff7e67;
     --rojo-oscuro: #ff3e3e;
     --amarillo: #f7f5dd;
+    --azul-muy-oscuro: #0a043c;
 }
 
 * {
@@ -218,11 +219,12 @@ tr:has(input[type="checkbox"]:checked) {
     transition: transform 0.5s, background-color 0.3s;
     display: block;
     max-width: 45px;
-
-
 }
 .btn_borrar:hover {
     background-color: var(--rojo-oscuro);
+}
+#btn_nohecho:hover {
+    background-color: var(--azul-muy-oscuro);
 }
 #acciones_grupales {
     padding: 1rem 0;
