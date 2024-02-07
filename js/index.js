@@ -239,7 +239,7 @@ function datos_ajax(datos){ //coloca las notas en la tabla
             "<td class='centrar_id'>"+this.id+"</td>"+
             "<td>"+this.nombre+"</td>"+
             "<td class='descripcion'>"+this.descripción+"</td>"+
-            "<td style='text-align: center'> <button id_modificar='"+this.id+"'>Modificar</button> </td>"+
+            "<td class='centrar_id'> <button id_modificar='"+this.id+"'>Modificar</button> </td>"+
             "<td>"+b_hecho+"</td>"+
         "</tr>");
     });
