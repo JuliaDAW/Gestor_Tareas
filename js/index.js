@@ -63,7 +63,7 @@ $(document).ready(()=>{
                 dataType: "json",
                 success: function(datos){
                     $(datos).each(function(nota){
-                        $("#nota_id").html(this.id);
+                        $("#nota_id").html(this.id).attr("id_val", this.id);
                         $("#nota_nombre").val(this.nombre);
                         $("#nota_descripcion").val(this.descripción);
                     })
@@ -76,7 +76,7 @@ $(document).ready(()=>{
     });
 
     $("#id_editar").on("click", function(){ //editar nota
-        let n_id=$("#nota_id").val();
+        let n_id=$("#nota_id").attr("id_val");
         let n_nombre=$("#nota_nombre").val();
         let n_descripcion=$("#nota_descripcion").val();
 
