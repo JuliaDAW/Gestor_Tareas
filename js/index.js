@@ -119,7 +119,11 @@ $(document).ready(()=>{
         } else { errorToast.showToast(); }
     });
 
-    $(".btn_reset").on("click", mostrar_notas); //vuelve a mostrar todas las notas
+    $(".btn_reset").on("click", ()=> {
+        mostrar_notas();
+        $("#id_texto").val("");
+        $("#id_hecho").val("2");
+    })
 
     $("#id_borrar").on("click", function(){ //borrar varias notas
         if(notas.length>0){
