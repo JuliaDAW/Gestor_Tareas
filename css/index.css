@@ -28,6 +28,9 @@ button, input[type="button"] {
     border-radius: 0.5rem;
     color: white;
 }
+#id_insertar:hover, #id_editar:hover{
+    background-color: rgb(45, 106, 79);
+}
 button[id_modificar] {
     background-color: var(--amarillo);
     color: black;
@@ -101,6 +104,7 @@ textarea {
     padding: 0.4rem 0.8rem;
     background-color: var(--verde);
     font-size: large;
+    transition: background-color 0.3s;
 }
 .btn_buscar {
     padding: 7px;
@@ -175,6 +179,9 @@ tr:has(input[type="checkbox"]:checked) {
     transform: translate(45%, -45%);
     background-color: transparent;
 }
+#btn_close:hover{
+    --rojo: crimson;
+}
 #id_buscar {
     display: flex;
     justify-content: right;
@@ -220,7 +227,7 @@ tr:has(input[type="checkbox"]:checked) {
     display: block;
     max-width: 45px;
 }
-.btn_borrar:hover {
+.btn_borrar:hover{
     background-color: var(--rojo-oscuro);
 }
 #btn_nohecho:hover {
