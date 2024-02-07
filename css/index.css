@@ -8,6 +8,7 @@
     --rojo-oscuro: #ff3e3e;
     --amarillo: #f7f5dd;
     --azul-muy-oscuro: #0a043c;
+    --amarillo-oscuro: #cfc343;
 }
 
 * {
@@ -35,7 +36,11 @@ button[id_modificar] {
     background-color: var(--amarillo);
     color: black;
     padding: 0.5rem;
-    transition: transform 0.5s, background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
+}
+button[id_modificar]:hover {
+    background-color: var(--amarillo-oscuro);
+    color: white;
 }
 body {
     font-family: 'Roboto', sans-serif;
