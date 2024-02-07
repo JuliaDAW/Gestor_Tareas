@@ -101,13 +101,13 @@ $(document).ready(()=>{
     $("#id_buscar").on("submit", function(e){ //busca resultados por nombre y hecho
         e.preventDefault();
         let texto=$("#id_texto").val();
-        let radio=$("input[name=radio_hecho]:checked").val();
+        let radio=$("#id_hecho").val();
         
-        if(!texto==""){
+        if(texto!="" || radio!=2){
             $.ajax({
                 type: "post",
                 url: "php/getTareas.php",
-                data: {nombre: texto, nocache: Math.random()},
+                data: {nombre: texto, hecho: radio, nocache: Math.random()},
                 dataType: "json",
                 success: function(datos){
                     datos_ajax(datos);
