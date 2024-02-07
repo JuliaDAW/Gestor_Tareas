@@ -200,7 +200,7 @@ tr:has(input[type="checkbox"]:checked) {
     max-width: 45px;
 
 }
-#btn_hecho {
+.si_hecho {
     background-color: var(--verde);
     color: white;
     padding: 0.5rem;
@@ -210,7 +210,7 @@ tr:has(input[type="checkbox"]:checked) {
     max-width: 45px;
 
 }
-#btn_nohecho {
+.no_hecho {
     background-color: var(--azul-oscuro);
     color: white;
     padding: 0.5rem;
