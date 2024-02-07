@@ -63,7 +63,7 @@ $(document).ready(()=>{
                 dataType: "json",
                 success: function(datos){
                     $(datos).each(function(nota){
-                        $("#nota_id").val(this.id);
+                        $("#nota_id").html(this.id);
                         $("#nota_nombre").val(this.nombre);
                         $("#nota_descripcion").val(this.descripción);
                     })
