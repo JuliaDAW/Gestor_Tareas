@@ -102,6 +102,8 @@ $(document).ready(()=>{
         e.preventDefault();
         let texto=$("#id_texto").val();
         let radio=$("#id_hecho").val();
+
+        if(radio==2) radio=undefined;
         
         if(texto!="" || radio!=2){
             $.ajax({
@@ -181,6 +183,25 @@ $(document).ready(()=>{
     $("#radio_deseleccionar").on("click", function(){
         $(".radio").prop("checked", false);
     })
+
+    $("#id_hecho").on("change", function(){
+        let radio=$("#id_hecho").val();
+
+        if(radio==2) radio=undefined;
+
+        $.ajax({
+            type: "post",
+            url: "php/getTareas.php",
+            data: {hecho: radio, nocache: Math.random()},
+            dataType: "json",
+            success: function(datos){
+                datos_ajax(datos);
+            },
+            error: function(){
+                window.alert("Se ha producido un error");
+            }
+        })
+    });
 
     $btn_cerrar = $("#btn_close");
     $btn_cerrar.on("click", ocultarModificar);
