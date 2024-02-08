@@ -180,10 +180,6 @@ $(document).ready(()=>{
         notas.splice(0, notas.length);
     })
 
-    $("#radio_deseleccionar").on("click", function(){
-        $(".radio").prop("checked", false);
-    })
-
     $("#id_hecho").on("change", function(){ //cambio select
         let texto=$("#id_texto").val();
         let radio=$("#id_hecho").val();
